@@ -54,7 +54,7 @@ def run_bot(reddit, comments_replied_to):
 
     print('Checking {} comment(s)...'.format(check_limit))
     for comment in reddit.subreddit('test').comments(limit = check_limit):
-        if check == comment.body and comment.id not in comments_replied_to:# and comment.author != reddit.user.me():
+        if check == comment.body and comment.id not in comments_replied_to and comment.author != reddit.user.me():
             print('\'{0}\' found in {1}'.format(check, comment.id))
 
             parent = comment.parent()
